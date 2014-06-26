@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block header_text %}Django lessons{% endblock %}
+{% block lessons %}
+<div id="lessons" class="table">
+	{% for item in lesson %}
+	<h3>{{ item.title }}</h3>
+	 {{ item.text }}
+  {% endfor %}
+</div>
+{% endblock %}
