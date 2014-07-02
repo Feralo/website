@@ -1,3 +1,3 @@
 website
 =======
-https://travis-ci.org/Feralo/website.svg?branch=master
+<img src="https://travis-ci.org/Feralo/website.svg?branch=master">
