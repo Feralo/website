@@ -6,7 +6,7 @@ import sys
 import time
 
 
-class NewProjectTest(StaticLiveServerCase):
+class NewLessonTest(StaticLiveServerCase):
     @classmethod
     def setUpClass(cls):
         for arg in sys.argv:
@@ -30,14 +30,14 @@ class NewProjectTest(StaticLiveServerCase):
 
     def test_home_page_lists_lessons(self):
         # a person visits the website and it returns a webpage
-        self.browser.get('http://localhost:8000')
+        self.browser.get(self.server_url)
         self.browser.implicitly_wait(3)
         
         
         # taking a look at the title, the user confirms that this project was
-        # written in a real framework
+        # written in a 'real' framework
         self.assertIn('Django', self.browser.title)
-        time.sleep(1)
+        #time.sleep(1)
           
         # looking at the page that loaded, visitor sees lessons area
         lessons_container = self.browser.find_element_by_id('lessons')
@@ -54,7 +54,7 @@ class NewProjectTest(StaticLiveServerCase):
         
         
         
-        self.fail('finish testing')
+        #self.fail('finish testing')
         
         # He is allowed to enter a to-do item right away
         inputbox = self.browser.find_element_by_id('id_new_title')
