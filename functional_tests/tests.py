@@ -52,15 +52,9 @@ class NewLessonTest(StaticLiveServerCase):
            
         # and publication date
         
-        
-        
-        #self.fail('finish testing')
-        
         # He is allowed to enter a to-do item right away
-        inputbox = self.browser.find_element_by_id('id_new_title')
-        self.assertEqual(
-            inputbox.get_attribute('placeholder'),'title'
-        )
+        
+        self.fail('finish testing')
 
 if __name__ == '__main__':
     unittest.main(warnings='ignore')
