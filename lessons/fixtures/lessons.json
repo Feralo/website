@@ -1,0 +1,18 @@
+[
+{
+    "pk": 1,
+    "fields": {
+        "title": "Morbi vitae",
+        "text": "Proin vulputate tincidunt commodo. Sed tristique scelerisque volutpat. Nulla nec auctor augue, ut consequat sem. Quisque ac felis a sapien congue fermentum in ac magna. Donec commodo vitae enim nec pellentesque. Sed nec orci aliquet, tempus arcu non, vulputate felis. Proin pulvinar id sapien quis elementum. In sodales libero sit amet elit feugiat sollicitudin."
+    },
+    "model": "lessons.lesson"
+},
+{
+    "pk": 2,
+    "fields": {
+        "title": "Sed commodo",
+        "text": "Nam suscipit urna justo, ut fermentum mi cursus in. Aenean id tellus nec nulla tincidunt luctus. Vivamus ac hendrerit dui. Cras fermentum tellus sit amet aliquet adipiscing. Maecenas ut nulla vitae sapien ullamcorper lobortis venenatis vel libero. Donec tempus nulla a ipsum tempus, id vehicula ligula dapibus. Phasellus feugiat luctus erat, et imperdiet nunc cursus at. Nulla porta sollicitudin nunc, et vestibulum nisl ultricies quis. Suspendisse enim libero, sodales ut vehicula vitae, consectetur in purus. Curabitur justo velit, adipiscing ut commodo at, lobortis ut leo. Integer commodo arcu metus, sit amet congue eros auctor sit amet. Nunc mi urna, venenatis et odio eu, fringilla rutrum ante. Integer ac commodo magna, in pulvinar arcu."
+    },
+    "model": "lessons.lesson"
+}
+]
