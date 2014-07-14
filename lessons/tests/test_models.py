@@ -4,6 +4,7 @@ from django.core.exceptions import ValidationError
 from lessons.models import Lesson
 
 class LessonModelsTest(TestCase):
+    fixtures = ['lessons.json'] # 2 fixtures here, let's add 2 more
 
     def test_saving_and_retreiving_lessons(self):
         first_lesson = Lesson()
@@ -19,10 +20,10 @@ class LessonModelsTest(TestCase):
         second_lesson.full_clean()
 
         saved_lessons = Lesson.objects.all()
-        self.assertEqual(saved_lessons.count(), 2)
+        self.assertEqual(saved_lessons.count(), 4)
 
-        first_saved_lesson = saved_lessons[0]
-        second_saved_lesson = saved_lessons[1]
+        first_saved_lesson = saved_lessons[2]
+        second_saved_lesson = saved_lessons[3]
 
         self.assertEqual(first_saved_lesson.title, "Title of first lesson")
         self.assertEqual(first_saved_lesson.text, "Text of first lesson")
@@ -36,3 +37,16 @@ class LessonModelsTest(TestCase):
         with self.assertRaises(ValidationError):
             lesson.save()
             lesson.full_clean()
+
+    # def test_lesson_ordering(self):
+        # item1 = Item.objects.create(list=list1, text='i1')
+        # item2 = Item.objects.create(list=list1, text='item 2')
+        # item3 = Item.objects.create(list=list1, text='3')
+        # self.assertEqual(
+        #     list(Item.objects.all()),
+        #     [item1, item2, item3]
+        # )
+
+    # def test_string_representation(self):
+    #     item = Item(text='some text to represent')
+    #     self.assertEqual(str(item), 'some text to represent')
