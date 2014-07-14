@@ -1,41 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Django lessons</title>
-	<meta name="viewport" content="width=device-width,initial-scale=1.0">
-	<link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-	<link href="/static/base.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="feralo">
+    <meta name="author" content="feralo.com">
+    <link rel="icon" href="favicon.ico">
+
+    <title>feralo</title>
+
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/base.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
   </head>
+
   <body>
 
-  <div class="container">
-	
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li><a href="#">About</a></li>
-        </ul>
-        <h3 class="text-muted">feralo</h3>
+    <div class="blog-masthead">
+      <div class="container">
+        <nav class="blog-nav">
+          <a class="blog-nav-item active" href="#">Home</a>
+          <a class="blog-nav-item" href="#">source</a>
+        </nav>
       </div>
-	<!--
-	  <div class="row">
-	    <div class="col-md-6 col-md-offset-3 jumbotron">
-		  <div class="text-center">
-            <h1>{% block header_text %}{% endblock %}</h1>
-		  </div>
-		</div>
-	  </div>
-	-->
-	  <div class="row">
-		<div class="col-md-6 col-md-offset-3">
+    </div>
+
+    <div class="container">
+
+      <div class="blog-header">
+        {% comment %}
+		<h1 class="blog-title">lessons</h1>
+        <p class="lead blog-description">notes from learning</p>
+		{% endcomment %}
+      </div>
+
+      <div class="row">
+
+        <div class="col-sm-8 blog-main">
+
 	      {% block lessons %}
 	      {% endblock %}
-		</div>
-	  </div>
-      <hr/>
-      <div class="footer">
-        <p>&copy; (built with django)</p>
-      </div>
-	
-	</div>	
+
+        </div><!-- /.blog-main -->
+
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          <div class="sidebar-module">
+            <h4>Elsewhere</h4>
+            <ol class="list-unstyled">
+              <li><a href="https://github.com/Feralo">GitHub</a></li>
+            </ol>
+          </div>
+        </div><!-- /.blog-sidebar -->
+
+      </div><!-- /.row -->
+
+    </div><!-- /.container -->
+
+	<div class="blog-footer">
+	  <p> lessons by <a href="https://twitter.com/feralo">feralo</a>.</p>
+	  <p>
+	      <a href="#">
+	          Back to top
+	      </a>
+	  </p>
+    </div>
   </body>
 </html>
