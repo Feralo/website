@@ -1,0 +1,10 @@
+[Unit]
+Description=SITENAME daemon
+
+[Service]
+User=USERNAME
+WorkingDirectory=/home/USERNAME/sites/SITENAME/source
+ExecStart=/home/USERNAME/sites/SITENAME/virtualenv/bin/gunicorn --bind unix:/home/USERNAME/sites/SITENAME/SITENAME.socket feralo.wsgi:application
+
+[Install]
+WantedBy=multi-user.target
