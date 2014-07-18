@@ -17,7 +17,7 @@ on Fedora 20:
 ## Nginx Virtual Host Config
 
 * nginx.template.conf
-* replace SITENAME with appropriate value
+* replace SITENAME and USERNAME with appropriate value
 
 ## Systemd
 
