@@ -36,7 +36,7 @@ class NewLessonTest(StaticLiveServerCase):
         
         # taking a look at the title, the user confirms that this project was
         # written in a 'real' framework
-        self.assertIn('Django', self.browser.title)
+        self.assertIn('feralo', self.browser.title)
         #time.sleep(1)
           
         # looking at the page that loaded, visitor sees lessons area
