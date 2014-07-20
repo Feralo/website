@@ -32,28 +32,28 @@ class NewLessonTest(StaticLiveServerCase):
         # a person visits the website and it returns a webpage
         self.browser.get(self.server_url)
         self.browser.implicitly_wait(3)
-        
-        
+
+
         # taking a look at the title, the user confirms that this project was
         # written in a 'real' framework
         self.assertIn('feralo', self.browser.title)
         #time.sleep(1)
-          
+
         # looking at the page that loaded, visitor sees lessons area
         lessons_container = self.browser.find_element_by_id('lessons')
-        
+
         # the title of most recent lesson posted at the top of the area
 
             # How should I test for this test fixtures??
-        
+
         # the next older lesson is listed after that
-        
-        # each lesson lists the author 
-           
+
+        # each lesson lists the author
+
         # and publication date
-        
+
         # He is allowed to enter a to-do item right away
-        
+
         #self.fail('finish testing')
 
 if __name__ == '__main__':

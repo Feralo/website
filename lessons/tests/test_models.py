@@ -1,10 +1,10 @@
 from django.test import TestCase
 from django.core.exceptions import ValidationError
-
+import datetime
 from lessons.models import Lesson
 
 class LessonModelsTest(TestCase):
-    fixtures = ['lessons.json'] # 2 fixtures here, let's add 2 more
+    #fixtures = ['lessons.json'] # 2 fixtures here, let's add 2 more
 
     def test_saving_and_retreiving_lessons(self):
         first_lesson = Lesson()
@@ -38,15 +38,16 @@ class LessonModelsTest(TestCase):
             lesson.save()
             lesson.full_clean()
 
-    # def test_lesson_ordering(self):
-        # item1 = Item.objects.create(list=list1, text='i1')
-        # item2 = Item.objects.create(list=list1, text='item 2')
-        # item3 = Item.objects.create(list=list1, text='3')
-        # self.assertEqual(
-        #     list(Item.objects.all()),
-        #     [item1, item2, item3]
-        # )
+    def test_lesson_ordering(self):
+        pd = pub_date=datetime.date(2014, 7, 19)
+        lesson1 = Lesson.objects.create(title='title 1', text='i1', pub_date=pd)
+        lesson2 = Lesson.objects.create(title='title 2', text='item 2', pub_date=pd)
+        lesson3 = Lesson.objects.create(title='title 3', text='3', pub_date=pd)
+        self.assertEqual(
+            list(Lesson.objects.all()),
+            [lesson1, lesson2, lesson3]
+        )
 
-    # def test_string_representation(self):
-    #     item = Item(text='some text to represent')
-    #     self.assertEqual(str(item), 'some text to represent')
+    def test_string_representation(self):
+        item = Lesson(title="Fancy babies",text='some text to represent')
+        self.assertEqual(str(item), "Fancy babies")

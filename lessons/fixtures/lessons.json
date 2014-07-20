@@ -1,18 +1,20 @@
 [
 {
-    "pk": 1,
-    "fields": {
-        "title": "Morbi vitae",
-        "text": "Proin vulputate tincidunt commodo. Sed tristique scelerisque volutpat. Nulla nec auctor augue, ut consequat sem. Quisque ac felis a sapien congue fermentum in ac magna. Donec commodo vitae enim nec pellentesque. Sed nec orci aliquet, tempus arcu non, vulputate felis. Proin pulvinar id sapien quis elementum. In sodales libero sit amet elit feugiat sollicitudin."
-    },
-    "model": "lessons.lesson"
+  "fields": {
+    "pub_date": "2014-07-19T21:27:20Z",
+    "title": "Fancy Baby Grand",
+    "text": "Schoenhut's Fancy Baby Grand is beautifully designed with curved legs and an elegant style. It is extremely durable and sturdy, yet sophisticated in appearance. With 30 full-sized keys, this piano is a great way to introduce your child to basic keyboard skills and musical concepts. Chromatically tuned with a full two-octave span, small hammers strike metal rods, producing lovely chime-like tones. The piano never goes out of tune and the tone never changes. The Learning System, with its play-by-color assortment of songs, is designed to bring immediate success. A removable color-coordinated strip fits behind the keys to guide small fingers from chord to chord. As your child learns and grows, the color strip can be transferred to a larger piano, since the keys on Schoenhut toy pianos are of corresponding width. This teaches children proper \"finger stretch\" from the very beginning. The accompanying Songbook contains a collection of familiar tunes. This Learning System has been specially designed to build a child's confidence and develop basic playing skills. "
+  },
+  "model": "lessons.lesson",
+  "pk": 1
 },
 {
-    "pk": 2,
-    "fields": {
-        "title": "Sed commodo",
-        "text": "Nam suscipit urna justo, ut fermentum mi cursus in. Aenean id tellus nec nulla tincidunt luctus. Vivamus ac hendrerit dui. Cras fermentum tellus sit amet aliquet adipiscing. Maecenas ut nulla vitae sapien ullamcorper lobortis venenatis vel libero. Donec tempus nulla a ipsum tempus, id vehicula ligula dapibus. Phasellus feugiat luctus erat, et imperdiet nunc cursus at. Nulla porta sollicitudin nunc, et vestibulum nisl ultricies quis. Suspendisse enim libero, sodales ut vehicula vitae, consectetur in purus. Curabitur justo velit, adipiscing ut commodo at, lobortis ut leo. Integer commodo arcu metus, sit amet congue eros auctor sit amet. Nunc mi urna, venenatis et odio eu, fringilla rutrum ante. Integer ac commodo magna, in pulvinar arcu."
-    },
-    "model": "lessons.lesson"
+  "fields": {
+    "pub_date": "2014-07-19T22:08:57Z",
+    "title": "KidKraft Deluxe Garage Set",
+    "text": "Our KidKraft Deluxe Garage Set is loaded with fun, interactive features and will keep kids entertained for hours at a time. This exciting wooden set with sturdy construction gives kids so many options, they'll never run out of new ways to play! The winding ramp goes from the top floor to the ground level. The KidKraft Deluxe Garage Set includes 6 cars and trucks, 4 smiling townspeople, Helicopter, and helipad. Also includes a car wash with moving scrubbers, ticket booth, and gas station. The KidKraft Deluxe Garage Set has Vivid, detailed artwork and makes a great gift for families with multiple children.\r\n\r\nKidKraft is a leading creator, manufacturer and distributor of children's toys, wooden furniture, gifts and room accessory items.?KidKraft was established in 1968, and has been a proven pioneer in the industry for over 40 years, emphasizing creative design, excellent quality, dependability, and competitive pricing. "
+  },
+  "model": "lessons.lesson",
+  "pk": 2
 }
 ]
