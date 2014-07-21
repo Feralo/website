@@ -1,20 +1,32 @@
 [
 {
+  "pk": 1,
   "fields": {
-    "pub_date": "2014-07-19T21:27:20Z",
-    "title": "Fancy Baby Grand",
-    "text": "Schoenhut's Fancy Baby Grand is beautifully designed with curved legs and an elegant style. It is extremely durable and sturdy, yet sophisticated in appearance. With 30 full-sized keys, this piano is a great way to introduce your child to basic keyboard skills and musical concepts. Chromatically tuned with a full two-octave span, small hammers strike metal rods, producing lovely chime-like tones. The piano never goes out of tune and the tone never changes. The Learning System, with its play-by-color assortment of songs, is designed to bring immediate success. A removable color-coordinated strip fits behind the keys to guide small fingers from chord to chord. As your child learns and grows, the color strip can be transferred to a larger piano, since the keys on Schoenhut toy pianos are of corresponding width. This teaches children proper \"finger stretch\" from the very beginning. The accompanying Songbook contains a collection of familiar tunes. This Learning System has been specially designed to build a child's confidence and develop basic playing skills. "
+    "text": "<p>The formatting here is a bit simpler than with XML. The whole collection\r\nis just represented as an array and the objects are represented by JSON objects\r\nwith three properties: \u201cpk\u201d, \u201cmodel\u201d and \u201cfields\u201d. \u201cfields\u201d is again an object\r\ncontaining each field\u2019s name and value as property and property-value\r\nrespectively.</p>\r\n<p>Foreign keys just have the PK of the linked object as property value.\r\nManyToMany-relations are serialized for the model that defines them and are\r\nrepresented as a list of PKs.</p>\r\n<p>Date and datetime related types are treated in a special way by the JSON\r\nserializer to make the format compatible with <a class=\"reference external\" href=\"http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15\">ECMA-262</a>.</p>",
+    "created": "2014-07-20T04:25:06Z",
+    "modified": "2014-07-20T05:49:10.127Z",
+    "title": "The whole collection is by JSON objects"
   },
-  "model": "lessons.lesson",
-  "pk": 1
+  "model": "lessons.lesson"
 },
 {
+  "pk": 2,
   "fields": {
-    "pub_date": "2014-07-19T22:08:57Z",
-    "title": "KidKraft Deluxe Garage Set",
-    "text": "Our KidKraft Deluxe Garage Set is loaded with fun, interactive features and will keep kids entertained for hours at a time. This exciting wooden set with sturdy construction gives kids so many options, they'll never run out of new ways to play! The winding ramp goes from the top floor to the ground level. The KidKraft Deluxe Garage Set includes 6 cars and trucks, 4 smiling townspeople, Helicopter, and helipad. Also includes a car wash with moving scrubbers, ticket booth, and gas station. The KidKraft Deluxe Garage Set has Vivid, detailed artwork and makes a great gift for families with multiple children.\r\n\r\nKidKraft is a leading creator, manufacturer and distributor of children's toys, wooden furniture, gifts and room accessory items.?KidKraft was established in 1968, and has been a proven pioneer in the industry for over 40 years, emphasizing creative design, excellent quality, dependability, and competitive pricing. "
+    "text": "The UTC offsets (columns 5 and 6) are parsed from the \"continent files\" and are in the format <code><i>{+|-}hh:mm</i></code> where the sign is <code><i>+</i></code> for east of UTC or <code><i>-</i></code> for west of UTC, and <code><i>hh</i></code> and <code><i>mm</i></code> are hours and minutes, respectively. The <i>UTC DST offset</i> is different from the <i>UTC offset</i> for zones where <a href=\"/wiki/Daylight_saving_time\" title=\"Daylight saving time\">daylight saving time</a> is observed (see individual time zone pages for details).</p>\r\n<p>The table is sorted by TZ by default.</p>",
+    "created": "2014-07-20T05:58:44.046Z",
+    "modified": "2014-07-20T05:58:44.046Z",
+    "title": "weeee"
   },
-  "model": "lessons.lesson",
-  "pk": 2
+  "model": "lessons.lesson"
+},
+{
+  "pk": 3,
+  "fields": {
+    "text": "<p>Fancy babies dance a daisy chain on my brain when they sprain a lane of lanolin. We like to grin on Tuesday when the weather is nice, pick on lice who live with mice that eat rice with Bryce on dried ice</p>\r\n",
+    "created": "2014-07-20T06:06:22.587Z",
+    "modified": "2014-07-20T06:06:22.587Z",
+    "title": "Little lifting of the mental bental"
+  },
+  "model": "lessons.lesson"
 }
 ]
