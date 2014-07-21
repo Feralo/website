@@ -20,10 +20,10 @@ class LessonModelsTest(TestCase):
         second_lesson.full_clean()
 
         saved_lessons = Lesson.objects.all()
-        self.assertEqual(saved_lessons.count(), 4)
+        self.assertEqual(saved_lessons.count(), 2)
 
-        first_saved_lesson = saved_lessons[2]
-        second_saved_lesson = saved_lessons[3]
+        first_saved_lesson = saved_lessons[0]
+        second_saved_lesson = saved_lessons[1]
 
         self.assertEqual(first_saved_lesson.title, "Title of first lesson")
         self.assertEqual(first_saved_lesson.text, "Text of first lesson")
@@ -39,10 +39,9 @@ class LessonModelsTest(TestCase):
             lesson.full_clean()
 
     def test_lesson_ordering(self):
-        pd = pub_date=datetime.date(2014, 7, 19)
-        lesson1 = Lesson.objects.create(title='title 1', text='i1', pub_date=pd)
-        lesson2 = Lesson.objects.create(title='title 2', text='item 2', pub_date=pd)
-        lesson3 = Lesson.objects.create(title='title 3', text='3', pub_date=pd)
+        lesson1 = Lesson.objects.create(title='title 1', text='i1')
+        lesson2 = Lesson.objects.create(title='title 2', text='item 2')
+        lesson3 = Lesson.objects.create(title='title 3', text='3')
         self.assertEqual(
             list(Lesson.objects.all()),
             [lesson1, lesson2, lesson3]

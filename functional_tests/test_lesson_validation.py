@@ -7,6 +7,8 @@ import time
 
 
 class NewLessonTest(StaticLiveServerCase):
+    # fixtures = ['lessons.json']
+
     @classmethod
     def setUpClass(cls):
         for arg in sys.argv:
@@ -37,7 +39,6 @@ class NewLessonTest(StaticLiveServerCase):
         # taking a look at the title, the user confirms that this project was
         # written in a 'real' framework
         self.assertIn('feralo', self.browser.title)
-        #time.sleep(1)
 
         # looking at the page that loaded, visitor sees lessons area
         lessons_container = self.browser.find_element_by_id('lessons')
