@@ -7,8 +7,8 @@ import sys
 import time
 
 
-class ListLessonsTest(FunctionalTest):
-    # fixtures = ['lessons.json']
+class HomePageTest(FunctionalTest):
+    fixtures = ['lessons.json']
 
     def test_home_page_lists_lessons(self):
         # a person visits the website and it returns a webpage
@@ -24,11 +24,13 @@ class ListLessonsTest(FunctionalTest):
         lessons_container = self.browser.find_element_by_id('lessons')
 
         # lesson has a title
+        self.browser.find_element_by_css_selector(".blog-post")
 
         # and publication date
+        date = self.browser.find_element_by_css_selector(".blog-post-meta")
+        # test that this is a date 
 
         # the title of most recent lesson posted first
-
 
         # the next older lesson is listed after that
 
