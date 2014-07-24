@@ -23,17 +23,14 @@ class ListLessonsTest(FunctionalTest):
         # looking at the page that loaded, visitor sees lessons area
         lessons_container = self.browser.find_element_by_id('lessons')
 
-        # the title of most recent lesson posted at the top of the area
-
-            # How should I test for this test fixtures??
-
-        # the next older lesson is listed after that
-
-        # each lesson lists the author
+        # lesson has a title
 
         # and publication date
 
-        # He is allowed to enter a to-do item right away
+        # the title of most recent lesson posted first
+
+
+        # the next older lesson is listed after that
 
         #self.fail('finish testing')
 

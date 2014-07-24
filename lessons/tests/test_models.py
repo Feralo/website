@@ -38,7 +38,7 @@ class LessonModelsTest(TestCase):
             lesson.save()
             lesson.full_clean()
 
-    def test_lesson_ordering(self):
+    def test_lesson_default_ordering(self):
         lesson1 = Lesson.objects.create(title='title 1', text='i1')
         lesson2 = Lesson.objects.create(title='title 2', text='item 2')
         lesson3 = Lesson.objects.create(title='title 3', text='3')
