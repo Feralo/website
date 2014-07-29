@@ -27,8 +27,8 @@ class HomePageTest(FunctionalTest):
         self.browser.find_element_by_css_selector(".blog-post")
 
         # and publication date
-        pub_date = self.browser.find_element_by_css_selector(".blog-post-meta")
-        print(pub_date.text)
+        pub_date = self.browser.find_element_by_css_selector(".blog-post-meta").text
+
         # test that this is a date 
 
         # the title of most recent lesson posted first
