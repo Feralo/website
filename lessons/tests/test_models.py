@@ -22,14 +22,14 @@ class LessonModelsTest(TestCase):
         saved_lessons = Lesson.objects.all()
         self.assertEqual(saved_lessons.count(), 2)
 
-        first_saved_lesson = saved_lessons[0]
-        second_saved_lesson = saved_lessons[1]
+        recent_saved_lesson = saved_lessons[0]
+        oldest_saved_lesson = saved_lessons[1]
 
-        self.assertEqual(first_saved_lesson.title, "Title of first lesson")
-        self.assertEqual(first_saved_lesson.text, "Text of first lesson")
+        self.assertEqual(oldest_saved_lesson.title, "Title of first lesson")
+        self.assertEqual(oldest_saved_lesson.text, "Text of first lesson")
 
-        self.assertEqual(second_saved_lesson.title, "Titulo de la segunda lesson")
-        self.assertEqual(second_saved_lesson.text, "Texto de la segunda")
+        self.assertEqual(recent_saved_lesson.title, "Titulo de la segunda lesson")
+        self.assertEqual(recent_saved_lesson.text, "Texto de la segunda")
 
 
     def test_cannot_save_empty_lesson(self):
@@ -44,9 +44,9 @@ class LessonModelsTest(TestCase):
         lesson3 = Lesson.objects.create(title='title 3', text='3')
         self.assertEqual(
             list(Lesson.objects.all()),
-            [lesson1, lesson2, lesson3]
+            [lesson3, lesson2, lesson1]
         )
 
     def test_string_representation(self):
-        item = Lesson(title="Fancy babies",text='some text to represent')
+        item = Lesson(title="Fancy babies",text='some text to represent in a view (not a title)')
         self.assertEqual(str(item), "Fancy babies")

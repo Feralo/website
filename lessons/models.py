@@ -10,6 +10,9 @@ class Lesson(models.Model):
     def __str__(self):
         return(self.title)
 
+    class Meta:
+        ordering = ['-created']
+
     def save(self, *args, **kwargs):
         ''' On save, update timestamps '''
         if not self.id:
