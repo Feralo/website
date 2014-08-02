@@ -39,4 +39,4 @@ Assume that we have a user account at /home/username
 
 The actual deployment:
 
-<code>$ fab deploy:host=elihu@feralo.com</code>
+<code>$ fab deploy:host=username@host.url.com</code>
