@@ -36,3 +36,6 @@ Assume that we have a user account at /home/username
 	  ├── static
           └── virtualenv
 </pre>
+
+The actual deployment:
+<code>$ fab deploy:host=elihu@feralo.com</code>
