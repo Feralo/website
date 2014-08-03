@@ -18,11 +18,11 @@ class HomePageTest(TestCase):
         expected_html = render_to_string('home.html')
         self.assertMultiLineEqual(response.content.decode(), expected_html)
 
-    @skipIf(True,"not implemented")
     def test_home_page_gets_recent_lessons_first(self):
-        # grab the time from the first lesson
-
-        # grab the time from the second lesson
-
-        # assert that 2nd is older
-        pass
+        Lesson.objects.create(title='Mastoklet', text="Lasterton fidler")
+        Lesson.objects.create(title='Tendamosi', text="Lasterton fidler")
+        request = HttpRequest()
+        response = home_page(request)
+        oldest_post_index = response.content.index(b'Mastoklet')
+        newer_post_index = response.content.index(b'Tendamosi')
+        self.assertTrue(newer_post_index < oldest_post_index)
