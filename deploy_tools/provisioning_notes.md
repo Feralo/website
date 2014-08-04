@@ -34,5 +34,9 @@ Assume that we have a user account at /home/username
 	  ├── database
 	  ├── source
 	  ├── static
-          └── virtualenv
+	  └── virtualenv
 </pre>
+
+The actual deployment:
+
+<code>$ fab deploy:host=username@host.url.com</code>
