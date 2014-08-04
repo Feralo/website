@@ -1,10 +1,10 @@
 from django.test import TestCase
 from django.core.exceptions import ValidationError
 import datetime
+from time import sleep
 from lessons.models import Lesson
 
 class LessonModelsTest(TestCase):
-    #fixtures = ['lessons.json'] # 2 fixtures here, let's add 2 more
 
     def test_saving_and_retreiving_lessons(self):
         first_lesson = Lesson()
@@ -50,3 +50,24 @@ class LessonModelsTest(TestCase):
     def test_string_representation(self):
         item = Lesson(title="Fancy babies",text='some text to represent in a view (not a title)')
         self.assertEqual(str(item), "Fancy babies")
+
+    def test_create_update_times(self):
+        lesson = Lesson()
+        lesson.title = "Lesson Title"
+        lesson.text = "Lesson Text"
+        lesson.save()
+        lesson.full_clean()
+        # compare created time to modified time
+        created_ms = lesson.created.microsecond
+        modified_ms = lesson.modified.microsecond
+        self.assertAlmostEqual(created_ms,modified_ms, delta=6)
+        sleep(1)
+
+        # modify lesson
+        lesson.text="new text"
+        lesson.save()
+
+        # assert that the modify times don't match
+        self.assertNotAlmostEqual(created_ms, lesson.modified.microsecond, delta=6)
+        self.assertNotEqual(modified_ms, lesson.modified.microsecond)
+        
