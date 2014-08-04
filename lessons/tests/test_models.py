@@ -25,11 +25,11 @@ class LessonModelsTest(TestCase):
         recent_saved_lesson = saved_lessons[0]
         oldest_saved_lesson = saved_lessons[1]
 
-        self.assertEqual(oldest_saved_lesson.title, "Title of first lesson")
-        self.assertEqual(oldest_saved_lesson.text, "Text of first lesson")
+        self.assertEqual(oldest_saved_lesson.title, first_lesson.title)
+        self.assertEqual(oldest_saved_lesson.text, first_lesson.text)
 
-        self.assertEqual(recent_saved_lesson.title, "Titulo de la segunda lesson")
-        self.assertEqual(recent_saved_lesson.text, "Texto de la segunda")
+        self.assertEqual(recent_saved_lesson.title, second_lesson.title)
+        self.assertEqual(recent_saved_lesson.text, second_lesson.text)
 
 
     def test_cannot_save_empty_lesson(self):
