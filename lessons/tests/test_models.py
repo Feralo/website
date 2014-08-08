@@ -3,6 +3,7 @@ from django.core.exceptions import ValidationError
 import datetime
 from time import sleep
 from lessons.models import Lesson
+from unittest import skipIf
 
 class LessonModelsTest(TestCase):
 
@@ -70,4 +71,16 @@ class LessonModelsTest(TestCase):
         # assert that the modify times don't match
         self.assertNotAlmostEqual(created_ms, lesson.modified.microsecond, delta=25)
         self.assertNotEqual(modified_ms, lesson.modified.microsecond)
-        
+
+    @skipIf(True,"Model has not been modified yet")
+    def test_published_attribute(self):
+        l = Lesson()
+        l.title = "Lesson Title"
+        l.text = "Lesson Text"
+        l.save()
+        l.full_clean()
+        self.assertFalse(l.published)
+        l.published = True
+        l.save()
+        l.full_clean()
+        self.assertTrue(l.published)
