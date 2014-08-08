@@ -6,6 +6,7 @@ class Lesson(models.Model):
     text = models.TextField(default='')
     modified = models.DateTimeField('modified',default=datetime.datetime.today())
     created = models.DateTimeField('created', default=datetime.datetime.today())
+    published = models.BooleanField(default=False)
 
     def __str__(self):
         return(self.title)
