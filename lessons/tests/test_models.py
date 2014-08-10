@@ -61,7 +61,7 @@ class LessonModelsTest(TestCase):
         # compare created time to modified time
         created_ms = lesson.created.microsecond
         modified_ms = lesson.modified.microsecond
-        self.assertAlmostEqual(created_ms,modified_ms, delta=25)
+        self.assertAlmostEqual(created_ms,modified_ms, delta=35)
         sleep(1)
 
         # modify lesson
@@ -69,10 +69,9 @@ class LessonModelsTest(TestCase):
         lesson.save()
 
         # assert that the modify times don't match
-        self.assertNotAlmostEqual(created_ms, lesson.modified.microsecond, delta=25)
+        self.assertNotAlmostEqual(created_ms, lesson.modified.microsecond, delta=35)
         self.assertNotEqual(modified_ms, lesson.modified.microsecond)
 
-    @skipIf(True,"Model has not been modified yet")
     def test_published_attribute(self):
         l = Lesson()
         l.title = "Lesson Title"
