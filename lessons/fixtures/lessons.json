@@ -1,32 +1,24 @@
 [
 {
-  "pk": 1,
   "fields": {
-    "text": "<p>The formatting here is a bit simpler than with XML. The whole collection\r\nis just represented as an array and the objects are represented by JSON objects\r\nwith three properties: \u201cpk\u201d, \u201cmodel\u201d and \u201cfields\u201d. \u201cfields\u201d is again an object\r\ncontaining each field\u2019s name and value as property and property-value\r\nrespectively.</p>\r\n<p>Foreign keys just have the PK of the linked object as property value.\r\nManyToMany-relations are serialized for the model that defines them and are\r\nrepresented as a list of PKs.</p>\r\n<p>Date and datetime related types are treated in a special way by the JSON\r\nserializer to make the format compatible with <a class=\"reference external\" href=\"http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15\">ECMA-262</a>.</p>",
-    "created": "2014-07-20T04:25",
-    "modified": "2014-07-20T05:49:10",
-    "title": "The whole collection is by JSON objects"
+    "modified": "2014-08-10T00:00:29.618",
+    "published": false,
+    "title": "imperdiet, ipsum vel feugiat ",
+    "text": "In imperdiet, ipsum vel feugiat suscipit, mauris quam viverra mauris, vel consectetur leo erat sit amet nunc. Aenean ac lacus id ante lobortis sodales at quis velit. Proin nec odio sit amet ipsum viverra dapibus at ac ipsum. Mauris congue fringilla eleifend. In auctor orci luctus risus sagittis, vel aliquet risus dapibus. Etiam eget tincidunt lorem, vitae semper lacus. Maecenas fermentum nibh justo, id lacinia odio pretium in. Aliquam posuere augue eget sollicitudin malesuada. Nam tempor fringilla sapien, id adipiscing elit. Pellentesque commodo facilisis nulla id hendrerit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In erat lorem, convallis rutrum odio et, eleifend consectetur nisl. Nunc eget enim dui. Cras ornare vitae ante vehicula dictum. Curabitur tincidunt orci at libero mollis dapibus. Vivamus condimentum quam elit, eget commodo justo pretium sed.",
+    "created": "2014-08-09T23:59:42"
   },
-  "model": "lessons.lesson"
+  "model": "lessons.lesson",
+  "pk": 1
 },
 {
-  "pk": 2,
   "fields": {
-    "text": "The UTC offsets (columns 5 and 6) are parsed from the \"continent files\" and are in the format <code><i>{+|-}hh:mm</i></code> where the sign is <code><i>+</i></code> for east of UTC or <code><i>-</i></code> for west of UTC, and <code><i>hh</i></code> and <code><i>mm</i></code> are hours and minutes, respectively. The <i>UTC DST offset</i> is different from the <i>UTC offset</i> for zones where <a href=\"/wiki/Daylight_saving_time\" title=\"Daylight saving time\">daylight saving time</a> is observed (see individual time zone pages for details).</p>\r\n<p>The table is sorted by TZ by default.</p>",
-    "created": "2014-07-20T05:58:44",
-    "modified": "2014-07-20T05:58:44",
-    "title": "weeee"
+    "modified": "2014-08-10T00:00:53.286",
+    "published": true,
+    "title": "Mauris fringilla eros nec ",
+    "text": "Mauris fringilla eros nec faucibus viverra. Mauris dolor mauris, convallis a urna a, rutrum commodo odio. Donec in urna viverra, placerat enim vel, condimentum massa. Vestibulum porttitor nibh eget purus egestas, eleifend ultricies libero adipiscing. Vestibulum vel lacus viverra, interdum odio id, auctor sapien. Morbi ullamcorper ipsum eros, vestibulum sollicitudin dui tristique at. Etiam hendrerit fringilla mauris, molestie laoreet nunc posuere eget.\r\n\r\nDonec condimentum hendrerit gravida. Etiam at sapien iaculis, hendrerit lacus ac, gravida diam. Phasellus id nibh varius, pharetra nisl id, viverra dolor. Curabitur varius in sem ut pharetra. Cras congue elit quis ante mollis tempor. Vivamus pharetra eget velit sed tempor. Praesent ornare massa quis faucibus ultricies. Fusce dapibus tristique diam et feugiat. Sed vel lacinia lectus. Suspendisse quis nulla a purus dapibus posuere. Mauris at varius erat, laoreet sodales leo. Sed velit velit, ultricies id diam sed, egestas tincidunt felis. Mauris aliquam tellus vitae massa aliquet, vel varius lacus condimentum. Donec vestibulum velit quis libero tincidunt pretium. Morbi varius pretium velit.",
+    "created": "2014-08-10T00:00:53.286"
   },
-  "model": "lessons.lesson"
-},
-{
-  "pk": 3,
-  "fields": {
-    "text": "<p>Fancy babies dance a daisy chain on my brain when they sprain a lane of lanolin. We like to grin on Tuesday when the weather is nice, pick on lice who live with mice that eat rice with Bryce on dried ice</p>\r\n",
-    "created": "2014-07-20T06:06:22",
-    "modified": "2014-07-20T06:06:22",
-    "title": "Little lifting of the mental bental"
-  },
-  "model": "lessons.lesson"
+  "model": "lessons.lesson",
+  "pk": 2
 }
 ]
