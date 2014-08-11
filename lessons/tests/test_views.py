@@ -21,8 +21,9 @@ class HomePageTest(TestCase):
         self.assertMultiLineEqual(response.content.decode(), expected_html)
 
     def test_home_page_gets_recent_lessons_first(self):
-        Lesson.objects.create(title='Mastoklet', text="Lasterton fidler")
-        Lesson.objects.create(title='Tendamosi', text="Lasterton fidler")
+        Lesson.objects.create(title='Mastoklet', text="Lasterton fidler", published=True)
+        Lesson.objects.create(title='Tendamosi', text="Lasterton fidler", published=True)
+
         request = HttpRequest()
         response = home_page(request)
         oldest_post_index = response.content.index(b'Mastoklet')
@@ -35,11 +36,26 @@ class HomePageTest(TestCase):
         lesson.title = 'Marcolis'
         lesson.text = 'Divinostrum caliromis [salvitorium](http://127.0.0.1:8000/)'
         lesson.created = timezone.now()
+        lesson.published = True
         lesson.save()
         
         request = HttpRequest()
         response = home_page(request)
-        print(markdown.markdown(lesson.text))
+        # print(markdown.markdown(lesson.text))
+        # print(str(response.content))
         self.assertTrue(markdown.markdown(lesson.text) in str(response.content))
-        
-        
+
+    def test_home_page_only_displays_published(self):
+        lastop = Lesson.objects.create(title='Lastop', text="Lopsit Opretanium zesto fastzl")
+        tendam = Lesson.objects.create(title='Tendamosi', text="Prewop triconis respoticranium")
+        pelo   = Lesson.objects.create(title='Undl Prundwata Pelo', text="Preppatonista lesto", published=True)
+        all_lessons = Lesson.objects.all()
+        self.assertEquals(len(all_lessons), 3)
+
+        request = HttpRequest()
+        response = home_page(request)
+        page = str(response.content)
+
+        self.assertTrue(b'Undl Prundwata Pelo' in response.content)
+        self.assertTrue(b'Lastop' not in response.content)
+        self.assertTrue(b'Tendamosi' not in response.content)
