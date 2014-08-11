@@ -1,32 +1,24 @@
 [
 {
   "pk": 1,
+  "model": "lessons.lesson",
   "fields": {
-    "text": "<p>The formatting here is a bit simpler than with XML. The whole collection\r\nis just represented as an array and the objects are represented by JSON objects\r\nwith three properties: \u201cpk\u201d, \u201cmodel\u201d and \u201cfields\u201d. \u201cfields\u201d is again an object\r\ncontaining each field\u2019s name and value as property and property-value\r\nrespectively.</p>\r\n<p>Foreign keys just have the PK of the linked object as property value.\r\nManyToMany-relations are serialized for the model that defines them and are\r\nrepresented as a list of PKs.</p>\r\n<p>Date and datetime related types are treated in a special way by the JSON\r\nserializer to make the format compatible with <a class=\"reference external\" href=\"http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15\">ECMA-262</a>.</p>",
-    "created": "2014-07-20T04:25",
-    "modified": "2014-07-20T05:49:10",
-    "title": "The whole collection is by JSON objects"
-  },
-  "model": "lessons.lesson"
+    "title": "Mastoklet",
+    "created": "2014-08-11T16:11:56.637",
+    "modified": "2014-08-11T16:11:56.638",
+    "published": true,
+    "text": "Lasterton fidler"
+  }
 },
 {
   "pk": 2,
+  "model": "lessons.lesson",
   "fields": {
-    "text": "The UTC offsets (columns 5 and 6) are parsed from the \"continent files\" and are in the format <code><i>{+|-}hh:mm</i></code> where the sign is <code><i>+</i></code> for east of UTC or <code><i>-</i></code> for west of UTC, and <code><i>hh</i></code> and <code><i>mm</i></code> are hours and minutes, respectively. The <i>UTC DST offset</i> is different from the <i>UTC offset</i> for zones where <a href=\"/wiki/Daylight_saving_time\" title=\"Daylight saving time\">daylight saving time</a> is observed (see individual time zone pages for details).</p>\r\n<p>The table is sorted by TZ by default.</p>",
-    "created": "2014-07-20T05:58:44",
-    "modified": "2014-07-20T05:58:44",
-    "title": "weeee"
-  },
-  "model": "lessons.lesson"
-},
-{
-  "pk": 3,
-  "fields": {
-    "text": "<p>Fancy babies dance a daisy chain on my brain when they sprain a lane of lanolin. We like to grin on Tuesday when the weather is nice, pick on lice who live with mice that eat rice with Bryce on dried ice</p>\r\n",
-    "created": "2014-07-20T06:06:22",
-    "modified": "2014-07-20T06:06:22",
-    "title": "Little lifting of the mental bental"
-  },
-  "model": "lessons.lesson"
+    "title": "Mastoklet",
+    "created": "2014-08-11T16:12:06.005",
+    "modified": "2014-08-11T16:12:06.009",
+    "published": true,
+    "text": "Lasterton fidler"
+  }
 }
 ]
