@@ -1,4 +1,7 @@
 {% extends 'base.html' %}
+
+{% load custom_markdown %}
+
 {% block header_text %}Lessons{% endblock %}
 {% block lessons %}
 
@@ -6,7 +9,7 @@
 	<div class="blog-post">
 	  <h2 class="blog-post-title">{{ item.title }}</h2>
 	  <p class="blog-post-date">{{ item.created }}</p>
-		{{ item.text | safe }}
+		{{ item.text | custom_markdown}}
 	</div><!-- /.blog-post -->
   {% endfor %}
 
