@@ -4,8 +4,8 @@ import datetime
 class Lesson(models.Model):
     title = models.CharField(max_length=150)
     text = models.TextField(default='')
-    modified = models.DateTimeField('modified',default=datetime.datetime.today())
-    created = models.DateTimeField('created', default=datetime.datetime.today())
+    modified = models.DateTimeField('modified',default=datetime.datetime.now, editable=False)
+    created = models.DateTimeField('created', default=datetime.datetime.now, editable=False)
     published = models.BooleanField(default=False)
 
     def __str__(self):
