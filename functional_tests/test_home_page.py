@@ -20,6 +20,7 @@ class HomePageTest(FunctionalTest):
         self.assertIn('feralo', self.browser.title)
 
         # looking at the page that loaded, visitor sees lessons area
+        # (this only works with working fixtures)
         lessons_container = self.browser.find_element_by_id('lessons')
 
         # lesson has a title
