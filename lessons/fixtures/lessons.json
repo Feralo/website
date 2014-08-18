@@ -1,24 +1,24 @@
 [
 {
-  "pk": 1,
-  "model": "lessons.lesson",
-  "fields": {
-    "title": "Mastoklet",
-    "created": "2014-08-11T16:11:56.637",
-    "modified": "2014-08-11T16:11:56.638",
-    "published": true,
-    "text": "Lasterton fidler"
-  }
+ "pk": 1,
+ "model": "lessons.lesson",
+ "fields": {
+   "title": "Basic setup of Fedora 20 firewall",
+   "created": "2014-04-11T16:09:59.731",
+   "modified": "2014-08-17T00:39:05.502",
+   "published": true,
+   "text": "After almost a decade of using Centos and Red Hat, jumping into Fedora 20 can be quite a learning experience, let's take one step at a time.\r\n\r\nFirewall\r\nTo start with, firewall administration is now administered through zones which are administered with the [firewall-cmd](https://fedoraproject.org/wiki/FirewallD \"Fedora firewall administration\") . In order to start making use of anything with a Linux command line utility, one must start by knowing the state of things:\r\n\r\n    $ firewall-cmd --state\r\n    $ firewall-cmd --list-all-zones\r\n    $ firewall-cmd --zone=public --list-ports\r\n\r\nIf you don't have the necessary ports open, they can be opened up explicitly:\r\n\r\n    $ firewall-cmd --zone=public --permanent --add-port=80/tcp\r\n    $ firewall-cmd --zone=public --permanent --add-port=22/tcp\r\n\r\nor you can use the pre-defined zones:\r\n\r\n    $ firewall-cmd --add-service=http --permanent"
+ }
 },
 {
-  "pk": 2,
-  "model": "lessons.lesson",
-  "fields": {
-    "title": "Mastoklet",
-    "created": "2014-08-11T16:12:06.005",
-    "modified": "2014-08-11T16:12:06.009",
-    "published": true,
-    "text": "Lasterton fidler"
-  }
+ "pk": 3,
+ "model": "lessons.lesson",
+ "fields": {
+   "title": "Financial Trend Analysis",
+   "created": "2014-08-11T16:09:59.731",
+   "modified": "2014-08-17T00:53:10.080",
+   "published": true,
+   "text": "Purpose - to visualize our spending habits and identify trends so that we can take action before we find ourselves in trouble!\r\n\r\nBasic process overview\r\n\r\n* gather data files from various locations\r\n* process data files into one format\r\n  perhaps [date, transaction amount, name]\r\n* graph the unified data\r\n first pass just graphs all the transactions\r\n at a later point we could make improvements to the graph\r\n\r\n![scatter](http://i.imgur.com/BsNgZaQl.png \"scatter plot showing expenses and allocations\")\r\n\r\nBash file to parse a bank export:\r\n\r\n    #!/bin/bash\r\n    \r\n    INPUT=bank_datafile.csv\r\n    OLDIFS=$IFS\r\n    IFS=,\r\n    [ ! -f $INPUT ] && { echo \"$INPUT file not found\"; exit 99; }\r\n    while read date no description debit credit\r\n    do\r\n           if [ ${#credit} -gt 0 ] ;then\r\n            amount=$credit\r\n        else\r\n            amount=$debit\r\n        fi\r\n    \r\n        echo $date,$( printf \"%.2f\" $amount ),$description\r\n    done < $INPUT\r\n    IFS=$OLDIFS\r\n\r\n\r\nRemove the he quotes and multiple spaces:\r\n\r\n    $ sed -i.bak 's/\"//g' pre_parsed_datafile.csv\r\n    $ sed -i.bak \u2019s/  / /g\u2019 pre_parsed_datafile.csv\r\n\r\nRead the parsed file and print data:\r\n\r\n    import csv\r\n    import datetime\r\n    import time\r\n    \r\n    with open('cleaned_transaction.data', newline='') as f:\r\n        reader = csv.reader(f)\r\n        for row in reader:\r\n         date_str = row[0]\r\n            \r\n            date_num = datetime.datetime.strptime(date_str, \"%m/%d/%y\")\r\n            seconds_since_epoch = time.mktime(date_num.timetuple()) * 1000\r\n            print(seconds_since_epoch,\",\", row[1])\r\n\r\n\r\nPlot arrays of data:\r\n\r\n    import matplotlib.pyplot as plat\r\n    x = [1378191600000.0 ,1378191600000.0 ,1378105200000.0 ]\r\n    y = [-9.89,-10.48,-5.69]\r\n    plt.plot(x,y,'ro')\r\n    plt.show()"
+ }
 }
 ]
