@@ -1,4 +1,4 @@
-https://www.djangoproject.com/download/1.7c1/tarball/
+Django==1.7
 Markdown==2.4.1
 gunicorn==19.0.0
 selenium==2.42.1
