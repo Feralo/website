@@ -14,8 +14,7 @@ class HomePageTest(FunctionalTest):
         self.browser.get(self.server_url)
         self.browser.implicitly_wait(3)
 
-        # taking a look at the title, the user confirms that this project was
-        # written in a 'real' framework
+        # taking a look at the title
         self.assertIn('feralo', self.browser.title)
 
         # looking at the page that loaded, visitor sees lessons area
