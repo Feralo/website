@@ -1,5 +1,5 @@
 Django==1.7
+Markdown==2.4.1
 gunicorn==19.0.0
 selenium==2.43.0
-Markdown==2.4.1
 django-markdown==0.6.1
