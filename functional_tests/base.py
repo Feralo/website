@@ -1,8 +1,8 @@
-from django.contrib.staticfiles.testing import StaticLiveServerCase
+from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from selenium import webdriver
 import sys
 
-class FunctionalTest(StaticLiveServerCase):
+class FunctionalTest(StaticLiveServerTestCase):
     @classmethod
     def setUpClass(cls):
         for arg in sys.argv:
