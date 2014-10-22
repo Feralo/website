@@ -23,6 +23,7 @@ SECRET_KEY = 'jnbop-h%kx=ixt2mb-!2e#d1l5q31sl+++&s@ibf8m87$b3doo'
 DEBUG = True
 
 TEMPLATE_DEBUG = True
+TEMPLATE_DIRS = (os.path.join(BASE_DIR, 'lessons/templates'),)
 
 ALLOWED_HOSTS = []
 
