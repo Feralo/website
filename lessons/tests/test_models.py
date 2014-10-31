@@ -83,3 +83,12 @@ class LessonModelsTest(TestCase):
         l.save()
         l.full_clean()
         self.assertTrue(l.published)
+
+    @skipIf(True,"not ready yet")
+    def test_slug_is_set(self):
+        l = Lesson()
+        l.title = "Lesson Title"
+        l.text = "Lesson Text"
+        l.save()
+        l.full_clean()
+        self.assertEqual(l.slug,'Lesson_Title')
