@@ -7,6 +7,10 @@ class Lesson(models.Model):
     modified = models.DateTimeField('modified',default=datetime.datetime.now, editable=False)
     created = models.DateTimeField('created', default=datetime.datetime.now, editable=False)
     published = models.BooleanField(default=False)
+    slug = models.SlugField(max_length=40)
+
+    def get_absolute_url(self):
+        return "/%s/%s/%s/%s/" % (self.created.year, self.created.month, self.created.day,self.id)
 
     def __str__(self):
         return(self.title)
