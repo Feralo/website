@@ -61,7 +61,7 @@ class LessonModelsTest(TestCase):
         # compare created time to modified time
         created_ms = lesson.created.microsecond
         modified_ms = lesson.modified.microsecond
-        self.assertAlmostEqual(created_ms,modified_ms, delta=65)
+        self.assertAlmostEqual(created_ms,modified_ms, delta=95)
         sleep(1)
 
         # modify lesson
@@ -84,11 +84,11 @@ class LessonModelsTest(TestCase):
         l.full_clean()
         self.assertTrue(l.published)
 
-    @skipIf(True,"not ready yet")
+    #@skipIf(True,"not ready yet")
     def test_slug_is_set(self):
         l = Lesson()
         l.title = "Lesson Title"
         l.text = "Lesson Text"
         l.save()
         l.full_clean()
-        self.assertEqual(l.slug,'Lesson_Title')
+        self.assertEqual(l.slug,'lesson-title')
