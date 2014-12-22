@@ -9,7 +9,7 @@ urlpatterns = patterns('',
     url(r'^(?P<page>\d+)?/?$', ListView.as_view(
      model=Lesson,
      template_name = 'home.html',
-     context_object_name = "lesson", 
+     context_object_name = "lessons", 
      paginate_by=5,
      )),
     

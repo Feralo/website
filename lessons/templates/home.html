@@ -5,12 +5,12 @@
 {% block header_text %}Lessons{% endblock %}
 {% block lessons %}
 
-	{% for item in lesson %}
+	{% for lesson in lessons %}
 	<div class="blog-post">
-	  <h2 class="blog-post-title"><a href="{{ item.get_absolute_url }}">{{ item.title }}</a></h2>
+	  <h2 class="blog-post-title"><a href="{{ lesson.get_absolute_url }}">{{ lesson.title }}</a></h2>
 	{{ post.title }}</a>
-	  <p class="blog-post-date">{{ item.created }}</p>
-		{{ item.text | custom_markdown}}
+	  <p class="blog-post-date">{{ lesson.created }}</p>
+		{{ lesson.text | custom_markdown}}
 	</div><!-- /.blog-post -->
   {% endfor %}
   {% if page_obj.has_previous %}
