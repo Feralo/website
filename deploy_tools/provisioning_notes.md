@@ -29,14 +29,14 @@ Assume that we have a user account at /home/username
 
 <pre>
 /home/username
-└── sites
-     └── SITENAME
-	  ├── database
-	  ├── source
-	  ├── static
-	  └── virtualenv
+         └── sites
+              └── SITENAME
+	           ├── database
+	           ├── source
+	           ├── static
+	           └── virtualenv
 </pre>
 
-The actual deployment:
+The actual deployment takes place from within the deploy_tools folder:
 
 <code>$ fab deploy:host=username@host.url.com</code>
