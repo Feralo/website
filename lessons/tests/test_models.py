@@ -69,7 +69,7 @@ class LessonModelsTest(TestCase):
         lesson.save()
 
         # assert that the modify times don't match
-        self.assertNotAlmostEqual(created_ms, lesson.modified.microsecond, delta=35)
+        self.assertNotAlmostEqual(created_ms, lesson.modified.microsecond, delta=95)
         self.assertNotEqual(modified_ms, lesson.modified.microsecond)
 
     def test_published_attribute(self):
