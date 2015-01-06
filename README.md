@@ -9,4 +9,5 @@ Make sure that your firewall allows http:
 
 Check the gunicorn service file:
 <code>less /usr/lib/systemd/system/feralo.com.service</code>
+
 [example site](http://feralo.com/)
