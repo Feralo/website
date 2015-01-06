@@ -19,4 +19,4 @@ install:
   - pip install -r requirements.txt
 
 script: 
-  - python manage.py test -v 2
+  - python manage.py test lessons.tests.test_models -v 2

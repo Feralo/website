@@ -37,6 +37,12 @@ Assume that we have a user account at /home/username
 	           └── virtualenv
 </pre>
 
+##  Deployment
 The actual deployment takes place from within the deploy_tools folder:
 
 <code>$ fab deploy:host=username@host.url.com</code>
+
+##  To restart gunicorn:
+Use the systemctl command (which makes use of scripts that are located in...
+<code>sudo systemctl restart feralo.com</code>
+
