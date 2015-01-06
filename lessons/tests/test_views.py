@@ -30,7 +30,6 @@ class HomePageTest(TestCase):
         newer_post_index = response.content.index(b'Tendamosi')
         self.assertTrue(newer_post_index < oldest_post_index)
 
-    # @skipIf(True,"not yet implemented")
     def test_view_displays_markdown(self):
         lesson = Lesson()
         lesson.title = 'Marcolis'
@@ -41,8 +40,6 @@ class HomePageTest(TestCase):
         
         request = HttpRequest()
         response = home_page(request)
-        # print(markdown.markdown(lesson.text))
-        # print(str(response.content))
         self.assertTrue(markdown.markdown(lesson.text) in str(response.content))
 
     def test_home_page_only_displays_published(self):
