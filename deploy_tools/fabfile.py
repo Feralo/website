@@ -2,7 +2,7 @@ from fabric.contrib.files import append, exists, sed
 from fabric.api import env, local, run
 import random
 
-REPO_URL = 'git://github.com/Feralo/tddwp.git'
+REPO_URL = 'https://github.com/Feralo/tddwp.git'
 
 def deploy():
     site_folder = '/home/%s/sites/%s' % (env.user, env.host)
