@@ -8,6 +8,6 @@ Make sure that your firewall allows http:
 <code>sudo firewall-cmd --add-service=http --permanent --zone=public</code>
 
 Check the gunicorn service file:
-<code>less /usr/lib/systemd/system/feralo.com.service</code>
+<code>less /usr/lib/systemd/system/[[SITENAME]].service</code>
 
 [example site](http://feralo.com/)
