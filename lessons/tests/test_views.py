@@ -22,56 +22,22 @@ class HomePageTest(TestCase):
         self.assertMultiLineEqual(response.content.decode(), expected_html)
 
     def test_home_page_gets_recent_lessons_first(self):
-        # lesson = Lesson()
-        # lesson.title = "Mastoklet"
-        # lesson.text = "Lesson Text"
-        # lesson.published=True
-        # lesson.save()
-        #
-        #
-        # lesson = Lesson()
-        # lesson.title = "Tendamosi"
-        # lesson.text = "Lesson Text"
-        # lesson.published=True
-        # lesson.save()
-
-        #request = HttpRequest()
-        #response = home_page(request)
         response = self.client.get('/')
-        # print(response.content)
 
         older_post_index = response.content.index(b'Prundwata')
         newer_post_index = response.content.index(b'Financial')
-        print(newer_post_index)
-        print(older_post_index)
         self.assertTrue(newer_post_index > older_post_index)
 
-    @skipIf(True,"not yet implemented")
+    #@skipIf(True,"not yet implemented")
     def test_view_displays_markdown(self):
-        # lesson = Lesson()
-        # lesson.title = 'Marcolis'
-        # lesson.text = 'Divinostrum caliromis [salvitorium](http://127.0.0.1:8000/)'
-        # lesson.created = timezone.now()
-        # lesson.published = True
-        # lesson.save()
-        markdown_link='[firewall-cmd](https://fedoraproject.org/wiki/FirewallD \"Fedora firewall administration\")'
-        print(markdown.markdown(markdown_link))
-        print('---')
-
-        request = HttpRequest()
-        response = home_page(request)
-        print(str(response.content))
-        self.assertTrue(markdown.markdown(markdown_link) in str(response.content))
+        expected_html_from_markdown_fixture="<img alt=\"scatter\" src=\"http://i.imgur.com/BsNgZaQl.png\""
+        response = self.client.get('/')
+        self.assertTrue(expected_html_from_markdown_fixture in str(response.content))
 
     def test_home_page_only_displays_published(self):
-        # lastop = Lesson.objects.create(title='Lastop', text="Lopsit Opretanium zesto fastzl")
-        # tendam = Lesson.objects.create(title='Tendamosi', text="Prewop triconis respoticranium")
-        # pelo   = Lesson.objects.create(title='Undl Prundwata Pelo', text="Preppatonista lesto", published=True)
         all_lessons = Lesson.objects.all()
         self.assertEquals(len(all_lessons), 3)
 
-        #request = HttpRequest()
-        #response = home_page(request)
         response = self.client.get('/')
 
         self.assertTrue(b'Undl Prundwata Pelo' in response.content)
