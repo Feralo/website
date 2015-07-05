@@ -23,23 +23,23 @@ class HomePageTest(TestCase):
 
     def test_home_page_gets_recent_lessons_first(self):
         response = self.client.get('/')
-
         older_post_index = response.content.index(b'Prundwata')
         newer_post_index = response.content.index(b'Financial')
         self.assertTrue(newer_post_index > older_post_index)
 
-    #@skipIf(True,"not yet implemented")
     def test_view_displays_markdown(self):
         expected_html_from_markdown_fixture="<img alt=\"scatter\" src=\"http://i.imgur.com/BsNgZaQl.png\""
         response = self.client.get('/')
         self.assertTrue(expected_html_from_markdown_fixture in str(response.content))
 
     def test_home_page_only_displays_published(self):
+        # 3 fixtures in fixture file
         all_lessons = Lesson.objects.all()
         self.assertEquals(len(all_lessons), 3)
 
         response = self.client.get('/')
+        self.assertTrue('Undl Prundwata Pelo' in str(response.content))
+        self.assertTrue('visualize our spending habits' in str(response.content))
 
-        self.assertTrue(b'Undl Prundwata Pelo' in response.content)
-        self.assertTrue(b'Lastop' not in response.content)
-        self.assertTrue(b'Tendamosi' not in response.content)
+        # one fixture should not be displayed
+        self.assertTrue('Centos and Red Hat' not in str(response.content))
