@@ -9,10 +9,11 @@ urlpatterns = patterns('',
     url(r'^(?P<page>\d+)?/?$', ListView.as_view(
      model=Lesson,
      template_name = 'home.html',
-     context_object_name = "lessons", 
+     context_object_name = "lessons",
+     queryset = Lesson.objects.filter(published=True),
      paginate_by=5,
      )),
-    
+
     # Individual posts
     url(r'^(?P<created__year>\d{4})/(?P<created__month>\d{1,2})/(?P<created__day>\d{1,2})/(?P<slug>[a-zA-Z0-9-]+)/?$', DetailView.as_view(
         model=Lesson,
