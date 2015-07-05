@@ -27,8 +27,8 @@ class HomePageTest(TestCase):
         # lesson.text = "Lesson Text"
         # lesson.published=True
         # lesson.save()
-        # 
-        # 
+        #
+        #
         # lesson = Lesson()
         # lesson.title = "Tendamosi"
         # lesson.text = "Lesson Text"
@@ -39,14 +39,14 @@ class HomePageTest(TestCase):
         #response = home_page(request)
         response = self.client.get('/')
         # print(response.content)
-        
+
         older_post_index = response.content.index(b'Prundwata')
         newer_post_index = response.content.index(b'Financial')
         print(newer_post_index)
         print(older_post_index)
         self.assertTrue(newer_post_index > older_post_index)
 
-    #@skipIf(True,"not yet implemented")
+    @skipIf(True,"not yet implemented")
     def test_view_displays_markdown(self):
         # lesson = Lesson()
         # lesson.title = 'Marcolis'
@@ -54,10 +54,14 @@ class HomePageTest(TestCase):
         # lesson.created = timezone.now()
         # lesson.published = True
         # lesson.save()
+        markdown_link='[firewall-cmd](https://fedoraproject.org/wiki/FirewallD \"Fedora firewall administration\")'
+        print(markdown.markdown(markdown_link))
+        print('---')
 
         request = HttpRequest()
         response = home_page(request)
-        self.assertTrue(markdown.markdown(lesson.text) in str(response.content))
+        print(str(response.content))
+        self.assertTrue(markdown.markdown(markdown_link) in str(response.content))
 
     def test_home_page_only_displays_published(self):
         # lastop = Lesson.objects.create(title='Lastop', text="Lopsit Opretanium zesto fastzl")
