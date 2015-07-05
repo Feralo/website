@@ -61,7 +61,7 @@ class LessonModelsTest(TestCase):
         # compare created time to modified time
         created_ms = lesson.created.microsecond
         modified_ms = lesson.modified.microsecond
-        self.assertAlmostEqual(created_ms,modified_ms, delta=95)
+        self.assertTrue(created_ms < modified_ms)
         sleep(1)
 
         # modify lesson
