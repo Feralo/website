@@ -53,6 +53,33 @@ ROOT_URLCONF = 'feralo.urls'
 
 WSGI_APPLICATION = 'feralo.wsgi.application'
 
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
+        },
+        'simple': {
+            'format': '%(levelname)s %(message)s'
+        },
+    },
+    'handlers': {
+        'file':{
+            'level':'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, 'debug.log'),
+            'formatter': 'verbose'
+        },
+    },
+    'loggers': {
+        'django.request': {
+            'handlers': ['file'],
+            'level': os.getenv('DJANGO_LOG_LEVEL', 'DEBUG'),
+            'propogate': True,
+        }
+    },
+}
 
 # Database
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
