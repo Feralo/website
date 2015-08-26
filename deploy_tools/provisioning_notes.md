@@ -43,6 +43,7 @@ The actual deployment takes place from within the deploy_tools folder:
 <code>$ fab deploy:host=username@host.url.com</code>
 
 ##  To restart gunicorn:
-Use the systemctl command (which makes use of scripts that are located in...
+Use the systemctl command (which makes use of scripts that are located in (/usr/lib/systemd/system/ )
+
 <code>sudo systemctl restart feralo.com</code>
 
