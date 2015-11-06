@@ -11,6 +11,7 @@ from lessons.views import home_page
 from unittest import skipIf
 import markdown
 
+
 class HomePageTest(TestCase):
     fixtures = ['lessons.json']
     maxDiff = None
@@ -19,7 +20,10 @@ class HomePageTest(TestCase):
         request = HttpRequest()
         response = home_page(request)
         expected_html = render_to_string('home.html')
-        self.assertMultiLineEqual(response.content.decode(), expected_html)
+        self.assertMultiLineEqual(
+            response.content.decode(),
+            expected_html
+        )
 
     def test_home_page_gets_recent_lessons_first(self):
         response = self.client.get('/')
@@ -28,9 +32,11 @@ class HomePageTest(TestCase):
         self.assertTrue(newer_post_index > older_post_index)
 
     def test_view_displays_markdown(self):
-        expected_html_from_markdown_fixture="<img alt=\"scatter\" src=\"http://i.imgur.com/BsNgZaQl.png\""
+        expected_html_from_markdown_fixture = "<img alt=\"scatter\" src=\"http://i.imgur.com/BsNgZaQl.png\""
         response = self.client.get('/')
-        self.assertTrue(expected_html_from_markdown_fixture in str(response.content))
+        self.assertTrue(
+            expected_html_from_markdown_fixture in str(
+                response.content))
 
     def test_home_page_only_displays_published(self):
         # 3 fixtures in fixture file
@@ -39,7 +45,9 @@ class HomePageTest(TestCase):
 
         response = self.client.get('/')
         self.assertTrue('Undl Prundwata Pelo' in str(response.content))
-        self.assertTrue('visualize our spending habits' in str(response.content))
+        self.assertTrue(
+            'visualize our spending habits' in str(
+                response.content))
 
         # one fixture should not be displayed
         self.assertTrue('Centos and Red Hat' not in str(response.content))

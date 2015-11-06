@@ -5,6 +5,7 @@ from time import sleep
 from lessons.models import Lesson
 from unittest import skipIf
 
+
 class LessonModelsTest(TestCase):
 
     def test_saving_and_retreiving_lessons(self):
@@ -26,12 +27,23 @@ class LessonModelsTest(TestCase):
         recent_saved_lesson = saved_lessons[0]
         oldest_saved_lesson = saved_lessons[1]
 
-        self.assertEqual(oldest_saved_lesson.title, first_lesson.title)
-        self.assertEqual(oldest_saved_lesson.text, first_lesson.text)
+        self.assertEqual(
+            oldest_saved_lesson.title, 
+            first_lesson.title
+            )
+        self.assertEqual(
+            oldest_saved_lesson.text, 
+            first_lesson.text
+            )
 
-        self.assertEqual(recent_saved_lesson.title, second_lesson.title)
-        self.assertEqual(recent_saved_lesson.text, second_lesson.text)
-
+        self.assertEqual(
+            recent_saved_lesson.title,
+            second_lesson.title
+            )
+        self.assertEqual(
+            recent_saved_lesson.text, 
+            second_lesson.text
+            )
 
     def test_cannot_save_empty_lesson(self):
         lesson = Lesson(title="listo", text='')
@@ -49,7 +61,9 @@ class LessonModelsTest(TestCase):
         )
 
     def test_string_representation(self):
-        item = Lesson(title="Fancy babies",text='some text to represent in a view (not a title)')
+        item = Lesson(
+            title="Fancy babies",
+            text='some text to represent in a view (not a title)')
         self.assertEqual(str(item), "Fancy babies")
 
     def test_create_update_times(self):
@@ -65,11 +79,12 @@ class LessonModelsTest(TestCase):
         sleep(1)
 
         # modify lesson
-        lesson.text="new text"
+        lesson.text = "new text"
         lesson.save()
 
         # assert that the modify times don't match
-        self.assertNotAlmostEqual(created_ms, lesson.modified.microsecond, delta=95)
+        self.assertNotAlmostEqual(
+            created_ms, lesson.modified.microsecond, delta=95)
         self.assertNotEqual(modified_ms, lesson.modified.microsecond)
 
     def test_published_attribute(self):
@@ -91,4 +106,4 @@ class LessonModelsTest(TestCase):
         l.text = "Lesson Text"
         l.save()
         l.full_clean()
-        self.assertEqual(l.slug,'lesson-title')
+        self.assertEqual(l.slug, 'lesson-title')
