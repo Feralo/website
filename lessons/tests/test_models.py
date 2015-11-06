@@ -28,22 +28,22 @@ class LessonModelsTest(TestCase):
         oldest_saved_lesson = saved_lessons[1]
 
         self.assertEqual(
-            oldest_saved_lesson.title, 
+            oldest_saved_lesson.title,
             first_lesson.title
-            )
+        )
         self.assertEqual(
-            oldest_saved_lesson.text, 
+            oldest_saved_lesson.text,
             first_lesson.text
-            )
+        )
 
         self.assertEqual(
             recent_saved_lesson.title,
             second_lesson.title
-            )
+        )
         self.assertEqual(
-            recent_saved_lesson.text, 
+            recent_saved_lesson.text,
             second_lesson.text
-            )
+        )
 
     def test_cannot_save_empty_lesson(self):
         lesson = Lesson(title="listo", text='')
@@ -52,9 +52,21 @@ class LessonModelsTest(TestCase):
             lesson.full_clean()
 
     def test_lesson_default_ordering(self):
-        lesson1 = Lesson.objects.create(title='title 1', text='i1')
-        lesson2 = Lesson.objects.create(title='title 2', text='item 2')
-        lesson3 = Lesson.objects.create(title='title 3', text='3')
+        lesson1 = Lesson.objects.create(
+            title='title 1',
+            text='i1'
+        )
+
+        lesson2 = Lesson.objects.create(
+            title='title 2',
+            text='item 2'
+        )
+
+        lesson3 = Lesson.objects.create(
+            title='title 3',
+            text='3'
+        )
+
         self.assertEqual(
             list(Lesson.objects.all()),
             [lesson3, lesson2, lesson1]
@@ -63,7 +75,7 @@ class LessonModelsTest(TestCase):
     def test_string_representation(self):
         item = Lesson(
             title="Fancy babies",
-            text='some text to represent in a view (not a title)')
+            text='some text to represent (not a title)')
         self.assertEqual(str(item), "Fancy babies")
 
     def test_create_update_times(self):
@@ -84,8 +96,15 @@ class LessonModelsTest(TestCase):
 
         # assert that the modify times don't match
         self.assertNotAlmostEqual(
-            created_ms, lesson.modified.microsecond, delta=95)
-        self.assertNotEqual(modified_ms, lesson.modified.microsecond)
+            created_ms,
+            lesson.modified.microsecond,
+            delta=95
+        )
+
+        self.assertNotEqual(
+            modified_ms,
+            lesson.modified.microsecond
+        )
 
     def test_published_attribute(self):
         l = Lesson()
